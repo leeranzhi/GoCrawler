@@ -30,7 +30,7 @@ func Run(seed ...Request) {
 		//加入新的url
 		requests = append(requests, paresResult.Requests...)
 
-		for _, item := range paresResult.Item {
+		for _, item := range paresResult.Items {
 			log.Printf("Got item %v", item)
 		}
 	}
