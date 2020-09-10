@@ -17,17 +17,17 @@ func ParseCityList(content []byte) engine.ParserResult {
 	matches := cityListRe.FindAllSubmatch(content, -1)
 	result := engine.ParserResult{}
 
-	limit := 10
+	//limit := 10
 	for _, m := range matches {
 		result.Items = append(result.Items, string(m[2]))
 		result.Requests = append(result.Requests, engine.Request{
 			Url:        string(m[1]),
 			ParserFunc: ParseCity,
 		})
-		limit--
-		if limit == 0 {
-			break
-		}
+		//limit--
+		//if limit == 0 {
+		//	break
+		//}
 	}
 	return result
 }
